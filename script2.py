@@ -1,15 +1,42 @@
-for i in range(1111):
-    my_number = int(input())
+import random, os
+from termcolor import colored
+print('KNB GAME\nrock=r\nscissors=s\npaper=p')
+for i in range(11111):
+    bet=['rock', 'scissors', 'paper']
+    a=random.choice(bet)
 
-    s11to19 = int(str(my_number)[-2:])
-    if 11<=s11to19<=19:
-        print(str(my_number) + ' дней назад')
+    my_bet=input()
+    if my_bet=='p' or my_bet=='s' or my_bet=='r':
+        if my_bet=='p':
+            my_bet='paper'
+        if my_bet=='s':
+            my_bet='scissors'
+        if my_bet=='r':
+            my_bet='rock'
+    else:
+        os.system('cls')
+        print('Invalid input')
         continue
-    last_number = int(str(my_number)[-1])
 
-    if last_number==1:
-        print(str(my_number) + ' день назад')
-    if 2<=last_number<=4:
-        print(str(my_number) + ' дня назад')
-    if 5<=last_number<=9 or last_number==0:
-        print(str(my_number) + ' дней назад')
+    os.system('cls')
+    print('You: ' + my_bet)
+    print('Enemy: ' + a)
+
+    if my_bet==a:
+        print(colored("draw!", 'cyan'))
+        continue
+    if my_bet=='paper':
+        if a=='scissors':
+            print(colored("you lose!", 'red'))
+        else:
+            print(colored("you win!", 'green'))
+    if my_bet=='scissors':
+        if a=='rock':
+            print(colored("you lose!", 'red'))
+        else:
+            print(colored("you win!", 'green'))
+    if my_bet=='rock':
+        if a=='paper':
+            print(colored("you lose!", 'red'))
+        else:
+            print(colored("you win!", 'green'))
