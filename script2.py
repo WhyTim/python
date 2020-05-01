@@ -1,3 +1,7 @@
+#---------------------------------------------------------------------
+#YOUTUBE - https://www.youtube.com/watch?v=HAYhkxd1AG8
+#---------------------------------------------------------------------
+
 import random, os
 from termcolor import colored
 print('KNB GAME\nrock=r\nscissors=s\npaper=p')
